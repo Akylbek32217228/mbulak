@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/authorizationFragment">
+
+
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="com.e.mbulak.ui.fragments.AuthorizationFragment"
+        android:label="authorization_fragment"
+        tools:layout="@layout/authorization_fragment" >
+        <action
+            android:id="@+id/action_authorizationFragment_to_checkPhoneFragment"
+            app:destination="@id/checkPhoneFragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/exit_left"/>
+        <argument
+            android:name="uid"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkPhoneFragment"
+        android:name="com.e.mbulak.ui.fragments.CheckPhoneFragment"
+        android:label="check_phone_fragment"
+        tools:layout="@layout/check_phone_fragment" >
+        <action
+            android:id="@+id/action_checkPhoneFragment_to_registrationPinFragment"
+            app:destination="@id/registrationPinFragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/exit_left"/>
+        <action
+            android:id="@+id/action_checkPhoneFragment_to_registeredFragment"
+            app:destination="@id/registrationSuccessFragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/exit_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.e.mbulak.ui.fragments.RegistrationFragment"
+        android:label="registration_fragment"
+        tools:layout="@layout/registration_fragment" >
+        <argument
+            android:name="sms_code"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/registration_to_registration_success"
+            app:destination="@id/registrationSuccessFragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/exit_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/registrationPinFragment"
+        android:name="com.e.mbulak.ui.fragments.RegistrationPinFragment"
+        android:label="registration_pin_fragment"
+        tools:layout="@layout/registration_pin_fragment" >
+        <action
+            android:id="@+id/action_registrationPinFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/exit_left"/>
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationSuccessFragment"
+        android:name="com.e.mbulak.ui.fragments.RegistrationSuccesssFragment"
+        android:label="registration_success_fragment"
+        tools:layout="@layout/registration_success_fragment">
+        <action
+            android:id="@+id/to_authorization"
+            app:destination="@id/authorizationFragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/exit_left"/>
+        <argument
+            android:name="uid"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/authSuccesskFragment"
+        android:name="com.e.mbulak.AuthSuccesskFragment"
+        android:label="fragment_auth_successk"
+        tools:layout="@layout/fragment_auth_successk" />
+
+</navigation>

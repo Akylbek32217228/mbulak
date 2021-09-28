@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.AuthorizationFragment"
+    android:orientation="vertical">
+
+    <net.bohush.geometricprogressview.GeometricProgressView
+        android:id="@+id/progress_bar_auth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gp_type="triangle"
+        android:visibility="invisible"
+        app:gp_number_of_angles="7"
+        app:gp_color="@android:color/black"
+        app:gp_duration="800"
+        app:gp_figure_padding="3dp" />
+
+
+    <TextView
+        android:id="@+id/text_auth_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Вход"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Логин"
+            android:textColorHint="@color/green_primary"
+            android:background="@drawable/edit_text_round_corner"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        app:passwordToggleEnabled="true"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Пароль"
+            android:textColorHint="@color/green_primary"
+            android:inputType="textPassword"
+            android:background="@drawable/edit_text_round_corner"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp">
+
+        <CheckBox
+            android:id="@+id/checkbox_remain_online"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/text_remain_online"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Оставаться в сети" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp">
+
+        <CheckBox
+            android:id="@+id/checkbox_login_with_prints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text_login_with_prints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Входить с помощью отпечатка" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/button_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/green_primary"
+        app:cardUseCompatPadding="true"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:text="Войти"
+            android:background="?selectableItemBackground"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/text_forget_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Забыли пароль"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:textColor="@color/green_primary"/>
+
+    <TextView
+        android:id="@+id/text_registration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:fontFamily="sans-serif-black"
+        android:text="Регистрация"
+        android:textColor="@color/green_primary"/>
+
+
+</LinearLayout>
